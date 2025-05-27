@@ -1,0 +1,161 @@
+cubes:
+  - name: invoices
+    sql_table: "\"METRICS\".\"INVOICES\""
+    data_source: default
+
+    joins: []
+
+    dimensions:
+      - name: id
+        sql: "{CUBE}.\"ID\""
+        type: string
+        primary_key: true
+
+      - name: business_uid
+        sql: "{CUBE}.\"BUSINESS_UID\""
+        type: string
+
+      - name: client_id
+        sql: "{CUBE}.\"CLIENT_ID\""
+        type: string
+
+      - name: state
+        sql: "{CUBE}.\"STATE\""
+        type: string
+
+      - name: type
+        sql: "{CUBE}.\"TYPE\""
+        type: string
+
+      - name: additional_cat_2
+        sql: "{CUBE}.\"ADDITIONAL_CAT_2\""
+        type: string
+
+      - name: source_data_name
+        sql: "{CUBE}.\"SOURCE_DATA_NAME\""
+        type: string
+
+      - name: due_date
+        sql: "{CUBE}.\"DUE_DATE\""
+        type: string
+
+      - name: filter_1_name
+        sql: "{CUBE}.\"FILTER_1_NAME\""
+        type: string
+
+      - name: additional_cat_4_name
+        sql: "{CUBE}.\"ADDITIONAL_CAT_4_NAME\""
+        type: string
+
+      - name: staff_id
+        sql: "{CUBE}.\"STAFF_ID\""
+        type: string
+
+      - name: additional_cat_3_name
+        sql: "{CUBE}.\"ADDITIONAL_CAT_3_NAME\""
+        type: string
+
+      - name: staff_name
+        sql: "{CUBE}.\"STAFF_NAME\""
+        type: string
+
+      - name: business_time_zone
+        sql: "{CUBE}.\"BUSINESS_TIME_ZONE\""
+        type: string
+
+      - name: metric_name
+        sql: "{CUBE}.\"METRIC_NAME\""
+        type: string
+
+      - name: filter_3_name
+        sql: "{CUBE}.\"FILTER_3_NAME\""
+        type: string
+
+      - name: total_paid_amount
+        sql: "{CUBE}.\"TOTAL_PAID_AMOUNT\""
+        type: string
+
+      - name: invoice_overdue_amount
+        sql: "{CUBE}.\"INVOICE_OVERDUE_AMOUNT\""
+        type: string
+
+      - name: additional_cat_1_name
+        sql: "{CUBE}.\"ADDITIONAL_CAT_1_NAME\""
+        type: string
+
+      - name: additional_cat_3
+        sql: "{CUBE}.\"ADDITIONAL_CAT_3\""
+        type: string
+
+      - name: filter_2_value
+        sql: "{CUBE}.\"FILTER_2_VALUE\""
+        type: string
+
+      - name: price
+        sql: "{CUBE}.\"PRICE\""
+        type: string
+
+      - name: staff_role
+        sql: "{CUBE}.\"STAFF_ROLE\""
+        type: string
+
+      - name: filter_1_value
+        sql: "{CUBE}.\"FILTER_1_VALUE\""
+        type: string
+
+      - name: value_2_name
+        sql: "{CUBE}.\"VALUE_2_NAME\""
+        type: string
+
+      - name: additional_cat_2_name
+        sql: "{CUBE}.\"ADDITIONAL_CAT_2_NAME\""
+        type: string
+
+      - name: additional_cat_4
+        sql: "{CUBE}.\"ADDITIONAL_CAT_4\""
+        type: string
+
+      - name: additional_cat_1
+        sql: "{CUBE}.\"ADDITIONAL_CAT_1\""
+        type: string
+
+      - name: status
+        sql: "{CUBE}.\"STATUS\""
+        type: string
+
+      - name: filter_2_name
+        sql: "{CUBE}.\"FILTER_2_NAME\""
+        type: string
+
+      - name: customer_status
+        sql: "{CUBE}.\"CUSTOMER_STATUS\""
+        type: string
+
+      - name: filter_3_value
+        sql: "{CUBE}.\"FILTER_3_VALUE\""
+        type: string
+
+      - name: value_1_name
+        sql: "{CUBE}.\"VALUE_1_NAME\""
+        type: string
+
+      - name: created_at
+        sql: "{CUBE}.\"CREATED_AT\""
+        type: time
+
+      - name: updated_at
+        sql: "{CUBE}.\"UPDATED_AT\""
+        type: time
+
+      - name: date
+        sql: "{CUBE}.\"Date\""
+        type: time
+
+    measures:
+      - name: count
+        type: count
+
+    pre_aggregations:
+      # Pre-aggregation definitions go here.
+      # Learn more in the documentation: https://cube.dev/docs/caching/pre-aggregations/getting-started
+

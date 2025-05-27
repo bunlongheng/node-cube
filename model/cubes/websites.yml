@@ -1,0 +1,157 @@
+cubes:
+  - name: websites
+    sql_table: "\"METRICS\".\"WEBSITES\""
+    data_source: default
+
+    joins: []
+
+    dimensions:
+      - name: id
+        sql: "{CUBE}.\"ID\""
+        type: number
+        primary_key: true
+
+      - name: client_status
+        sql: "{CUBE}.\"CLIENT_STATUS\""
+        type: string
+
+      - name: filter_2_value
+        sql: "{CUBE}.\"FILTER_2_VALUE\""
+        type: string
+
+      - name: website_actions
+        sql: "{CUBE}.\"WEBSITE_ACTIONS\""
+        type: string
+
+      - name: value_1_name
+        sql: "{CUBE}.\"VALUE_1_NAME\""
+        type: string
+
+      - name: type
+        sql: "{CUBE}.\"TYPE\""
+        type: string
+
+      - name: additional_cat_1
+        sql: "{CUBE}.\"ADDITIONAL_CAT_1\""
+        type: string
+
+      - name: business_uid
+        sql: "{CUBE}.\"BUSINESS_UID\""
+        type: string
+
+      - name: client_id
+        sql: "{CUBE}.\"CLIENT_ID\""
+        type: string
+
+      - name: filter_2_name
+        sql: "{CUBE}.\"FILTER_2_NAME\""
+        type: string
+
+      - name: heap_domain
+        sql: "{CUBE}.\"HEAP_DOMAIN\""
+        type: string
+
+      - name: additional_cat_4
+        sql: "{CUBE}.\"ADDITIONAL_CAT_4\""
+        type: string
+
+      - name: filter_1_value
+        sql: "{CUBE}.\"FILTER_1_VALUE\""
+        type: string
+
+      - name: path
+        sql: "{CUBE}.\"PATH\""
+        type: string
+
+      - name: customer_status
+        sql: "{CUBE}.\"CUSTOMER_STATUS\""
+        type: string
+
+      - name: filter_3_value
+        sql: "{CUBE}.\"FILTER_3_VALUE\""
+        type: string
+
+      - name: additional_cat_2
+        sql: "{CUBE}.\"ADDITIONAL_CAT_2\""
+        type: string
+
+      - name: event_type
+        sql: "{CUBE}.\"EVENT_TYPE\""
+        type: string
+
+      - name: additional_cat_2_name
+        sql: "{CUBE}.\"ADDITIONAL_CAT_2_NAME\""
+        type: string
+
+      - name: device_type
+        sql: "{CUBE}.\"DEVICE_TYPE\""
+        type: string
+
+      - name: visitor_status
+        sql: "{CUBE}.\"VISITOR_STATUS\""
+        type: string
+
+      - name: filter_3_name
+        sql: "{CUBE}.\"FILTER_3_NAME\""
+        type: string
+
+      - name: business_time_zone
+        sql: "{CUBE}.\"BUSINESS_TIME_ZONE\""
+        type: string
+
+      - name: additional_cat_3_name
+        sql: "{CUBE}.\"ADDITIONAL_CAT_3_NAME\""
+        type: string
+
+      - name: metric_name
+        sql: "{CUBE}.\"METRIC_NAME\""
+        type: string
+
+      - name: price
+        sql: "{CUBE}.\"PRICE\""
+        type: string
+
+      - name: additional_cat_4_name
+        sql: "{CUBE}.\"ADDITIONAL_CAT_4_NAME\""
+        type: string
+
+      - name: additional_cat_1_name
+        sql: "{CUBE}.\"ADDITIONAL_CAT_1_NAME\""
+        type: string
+
+      - name: source_data_name
+        sql: "{CUBE}.\"SOURCE_DATA_NAME\""
+        type: string
+
+      - name: additional_cat_3
+        sql: "{CUBE}.\"ADDITIONAL_CAT_3\""
+        type: string
+
+      - name: value_2_name
+        sql: "{CUBE}.\"VALUE_2_NAME\""
+        type: string
+
+      - name: filter_1_name
+        sql: "{CUBE}.\"FILTER_1_NAME\""
+        type: string
+
+      - name: landing_page
+        sql: "{CUBE}.\"LANDING_PAGE\""
+        type: string
+
+      - name: created_at
+        sql: "{CUBE}.\"CREATED_AT\""
+        type: time
+
+      - name: date
+        sql: "{CUBE}.\"Date\""
+        type: time
+
+    measures:
+      - name: count
+        type: count
+
+    pre_aggregations:
+      # Pre-aggregation definitions go here.
+      # Learn more in the documentation: https://cube.dev/docs/caching/pre-aggregations/getting-started
+
