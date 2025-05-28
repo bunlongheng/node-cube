@@ -1,0 +1,69 @@
+version: "3.8"
+
+services:
+  cube_api:
+    restart: always
+    image: cubejs/cube:latest
+    platform: linux/amd64
+    ports:
+      - "${PORT:-4000}:4000"
+    env_file:
+      - .env
+    volumes:
+      - .:/cube/conf
+    depends_on:
+      - cube_refresh_worker
+      - cubestore_router
+      - cubestore_worker_1
+      - cubestore_worker_2
+
+  cube_refresh_worker:
+    restart: always
+    image: cubejs/cube:latest
+    platform: linux/amd64
+    env_file:
+      - .env
+    volumes:
+      - .:/cube/conf
+
+  cubestore_router:
+    restart: always
+    image: cubejs/cubestore:latest
+    platform: linux/amd64
+    environment:
+      - CUBESTORE_WORKERS=cubestore_worker_1:10001,cubestore_worker_2:10002
+      - CUBESTORE_REMOTE_DIR=/cube/data
+      - CUBESTORE_META_PORT=9999
+      - CUBESTORE_SERVER_NAME=cubestore_router:9999
+    volumes:
+      - .cubestore:/cube/data
+
+  cubestore_worker_1:
+    restart: always
+    image: cubejs/cubestore:latest
+    platform: linux/amd64
+    environment:
+      - CUBESTORE_WORKERS=cubestore_worker_1:10001,cubestore_worker_2:10002
+      - CUBESTORE_SERVER_NAME=cubestore_worker_1:10001
+      - CUBESTORE_WORKER_PORT=10001
+      - CUBESTORE_REMOTE_DIR=/cube/data
+      - CUBESTORE_META_ADDR=cubestore_router:9999
+    volumes:
+      - .cubestore:/cube/data
+    depends_on:
+      - cubestore_router
+
+  cubestore_worker_2:
+    restart: always
+    image: cubejs/cubestore:latest
+    platform: linux/amd64
+    environment:
+      - CUBESTORE_WORKERS=cubestore_worker_1:10001,cubestore_worker_2:10002
+      - CUBESTORE_SERVER_NAME=cubestore_worker_2:10002
+      - CUBESTORE_WORKER_PORT=10002
+      - CUBESTORE_REMOTE_DIR=/cube/data
+      - CUBESTORE_META_ADDR=cubestore_router:9999
+    volumes:
+      - .cubestore:/cube/data
+    depends_on:
+      - cubestore_router

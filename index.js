@@ -15,9 +15,8 @@ const logger = winston.createLogger({
 });
 
 const server = new CubejsServer({
-    apiSecret: process.env.CUBEJS_API_SECRET || "rc_dev_secret_key",
+    apiSecret: process.env.CUBEJS_API_SECRET || "secret",
     devServer: true,
-    // No need for dbType or driverFactory — pulled from .env
 });
 
 server.listen().then(({ version }) => {
