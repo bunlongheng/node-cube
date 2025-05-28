@@ -12,6 +12,20 @@ PING, expect PONG
 SET testkey hello
 GET testkey
 
+
+# ~/Sites                                                                                                                                                             14:46:31
+# docker exec -it redis-local redis-cli
+# 127.0.0.1:6379>
+# 127.0.0.1:6379>
+# 127.0.0.1:6379>
+# 127.0.0.1:6379> PING
+# PONG
+# 127.0.0.1:6379> SET testkey hello
+# OK
+# 127.0.0.1:6379> GET testkey
+# "hello"
+# 127.0.0.1:6379>
+
 CUBEJS_CACHE_AND_QUEUE_DRIVER=redis
 CUBEJS_REDIS_URL=redis://localhost:6379
 
