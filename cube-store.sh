@@ -4,8 +4,6 @@ Make sure your docker-compose.yml includes:
 	•	cubestore_router
 	•	At least one cubestore_worker
 
-
-
 ~/Sites/node-cube main ● docker ps                                                                                                                    15:04:54
 CONTAINER ID   IMAGE                     COMMAND                  CREATED         STATUS        PORTS                    NAMES
 e4fb3c17ab38   cubejs/cube:latest        "docker-entrypoint.s…"   7 minutes ago   Up 1 second   0.0.0.0:4002->4000/tcp   node-cube-cube_api-1
@@ -33,10 +31,12 @@ pre_aggregations:
 docker-compose.yml
 
 =============================================
+docker-compose down
+docker system prune -af --volumes
+docker-compose up --build
+
 
 docker-compose down && docker-compose up -d
-
-
 
 
 =============================================
