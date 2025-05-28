@@ -29,4 +29,11 @@ GET testkey
 CUBEJS_CACHE_AND_QUEUE_DRIVER=redis
 CUBEJS_REDIS_URL=redis://localhost:6379
 
-docker-compose down && docker-compose up -d
+
+# Then Redis is not needed for Cube.js and won’t be used by the Cube API or Refresh Worker.
+
+docker stop redis-local
+docker rm redis-local
+
+
+CUBEJS_CACHE_AND_QUEUE_DRIVER=cubestore

@@ -25,6 +25,10 @@ services:
       - .env
     volumes:
       - .:/cube/conf
+    depends_on:
+      - cubestore_router
+      - cubestore_worker_1
+      - cubestore_worker_2
 
   cubestore_router:
     restart: always
@@ -67,3 +71,5 @@ services:
       - .cubestore:/cube/data
     depends_on:
       - cubestore_router
+
+
