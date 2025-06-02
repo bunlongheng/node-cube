@@ -39,10 +39,20 @@ docker-compose up --build
 docker-compose down && docker-compose up -d
 
 
-=============================================
+docker logs node-cube-cubestore_router-1
 
-NODE_ENV=production
-CUBEJS_DEV_MODE=false
-CUBEJS_CACHE_AND_QUEUE_DRIVER=cubestore
-CUBEJS_CUBESTORE_HOST=cubestore_router
-CUBEJS_API_SECRET=your_strong_secret
+
+curl http://localhost:3030/health 
+
+
+docker inspect --format='{{.State.Status}}' node-cube-cubestore_router-1
+
+
+                                                                                                                                                                                   
+docker exec -it node-cube-cubestore_router-1 sh                                                                                                                            ● 16:57:48
+# ls
+
+docker-compose down
+docker system prune -af --volumes
+docker-compose up --build
+
