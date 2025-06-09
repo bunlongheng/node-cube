@@ -1,0 +1,1 @@
+node -e "console.log(require('jsonwebtoken').sign({ appId: 'default' }, 'rc-secret', { expiresIn: '7d' }))"
